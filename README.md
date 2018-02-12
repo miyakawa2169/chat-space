@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# TODO
+## Ruby version
+WindowsPCで開発をしているが、仮想環境のCentOSのcurlコマンドのバージョンの古いため、ruby2.3.1へのバージョンアップでエラー発生。対応にやや時間がかかりそうなので、カリキュラムを進めつつ対応予定。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
