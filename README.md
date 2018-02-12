@@ -19,8 +19,8 @@
 ### テーブル定義
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true, index: true|
+|group_id|integer|null: false, foreign_key: true, index: true|
 
 ### Association
 - belongs_to :users
@@ -42,8 +42,9 @@
 ### テーブル定義
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|(id)※自動生成|integer|index: true ※自動生成されるカラムにindexのみ追加|
+|group_id|integer|null: false, foreign_key: true, index: true|
+|user_id|integer|null: false, foreign_key: true, index: true|
 |comment|string|null: false|
 |photo|string|------|
 
