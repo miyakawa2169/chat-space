@@ -5,14 +5,14 @@
 ### テーブル定義
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 |email|string|null: false|
 |password|string|null: false|
 
 ### Association
 - has_many :user_groups, dependent: :destroy
 - has_many :groups, through: :user_groups
-- accepts_nested_attributes_for :user_groups, allow_destroy: true
+- accepts_nested_attributes_for :groups, allow_destroy: true
 - has_many :tweets, dependent: :destroy
 
 ## user_groupsテーブル
@@ -23,19 +23,19 @@
 |group_id|integer|null: false, foreign_key: true, index: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 ## groupsテーブル
 ### テーブル定義
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :user_groups, dependent: :destroy
 - has_many :users, through: :user_groups
-- accepts_nested_attributes_for :user_groups, allow_destroy: true
+- accepts_nested_attributes_for :tweets, allow_destroy: true
 - has_many :tweets, dependent: :destroy
 
 ## tweetsテーブル
@@ -49,8 +49,8 @@
 |photo|string|------|
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 # TODO
 ## Ruby version
