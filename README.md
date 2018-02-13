@@ -5,7 +5,7 @@
 ### テーブル定義
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 |email|string|null: false|
 |password|string|null: false|
 
@@ -30,7 +30,7 @@
 ### テーブル定義
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :user_groups, dependent: :destroy
