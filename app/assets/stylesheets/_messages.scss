@@ -10,11 +10,8 @@ html, body {
     color: #FFFFFF;
     .user-information {
       height: 100px; // 一時的に設定
-      // width: 100%;
       background-color: #253141;
       line-height: 100px;
-      // display: table-cell;
-      // vertical-align: middle;
       padding: 0 20px;
       &__name {
         float: left;
