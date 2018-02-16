@@ -21,17 +21,17 @@ html, body {
         font-weight: bold;
       }
     }
-    .message-group {
+    .groups {
       height: 100%;
       background-color: #2f3e51;
       padding: 0 20px;
-      .message-content {
-        &__title {
+      .group-content {
+        &__name {
           padding-top: 20px;
           padding-bottom: 5px;
           font-size: 15px;
         }
-        &__description {
+        &__message {
           font-size: 11px;
           padding-bottom: 40px;
         }
