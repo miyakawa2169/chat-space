@@ -9,7 +9,7 @@
               .group-menber-listse-o.icon
         %li.user-information__lists__list
           %a
-            %i.fa.fa-cog
+            %i.fa.fa-cog.icon
     .groups
       %ul.group-content
         %li
@@ -49,5 +49,12 @@
             %p.lower-message__content bbb
             %img.lower-message__image img
     .chat-form
+      %form
+        .form-group
+          %input{placeholder: "Type a messeage!", type: "text", name: "message"}
+          %label.form-img
+            %i.fa.fa-picture-o.icon
+        %input{type: "submit", value: "Send"}
+
 
 

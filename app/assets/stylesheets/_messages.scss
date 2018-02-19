@@ -90,6 +90,7 @@ html, body {
       height: calc(100% - 100px - 90px);
       background-color: #FAFAFA;
       padding: 0 40px;
+      overflow: scroll;
       .message {
         .upper-message {
           padding-top: 46px;
@@ -118,6 +119,43 @@ html, body {
 
           }
         }
+      }
+    }
+    .chat-form {
+      background-color: #DDDDDD;
+      height: 50px;
+      padding: 20px 40px;
+      .form-group {
+        float: left;
+        height: 50px;
+        width: calc(100% - 130px);
+        background-color: yellow;
+        input {
+          float: left;
+          height: 50px;
+          width: calc(100% - 50px);
+          font-size: 16px;
+          color: #434A54;
+          padding-left: 0;
+          padding-right: 0;
+        }
+        label.form-img {
+          float: right;
+          height: 50px;
+          background-color: #FFF;
+          line-height: 50px;
+          padding-right: 10px;
+        }
+      }
+      input {
+        float: right;
+        border: none;
+        background-color: #38AEF0;
+        color: #fff;
+        font-size: 16px;
+        padding: 0 30px;
+        margin-left: 15px;
+        height: 50px;
       }
     }
   }
