@@ -1,0 +1,61 @@
+.wrapper
+  .flash-message
+    %p チャットグループが作成されました。
+  .sidebar
+    .user-information
+      .user-information__name ユーザー名
+      %ul.user-information__lists
+        %li.user-information__lists__list
+          %a
+            %i.fa.fa-pencil-square-o.icon
+        %li.user-information__lists__list
+          %a
+            %i.fa.fa-cog
+    .groups
+      %ul.group-content
+        %li
+          %p.group-content__name グループ名1
+          %p.group-content__message グループコメント1
+        %li
+          %p.group-content__name グループ名2
+          %p.group-content__message グループコメント2
+        %li
+          %p.group-content__name グループ名3
+          %p.group-content__message グループコメント3
+  .chat
+    .chat-header
+      .group
+        .group__title Sampleグループ
+        .group__menber-lists
+          %ul
+            %li.group__menber-lists__list Member：
+            %li.group__menber-lists__list menber1
+            %li.group__menber-lists__list menber2
+            %li.group__menber-lists__list menber3
+      .group-edit-button Edit
+    .chat-messages
+      %ul
+        %li.message
+          .upper-message
+            %p.upper-message__user-name user1name
+            %p.upper-message__date 2018/02/14 09:25
+          .lower-message
+            %p.lower-message__content aaa
+            %img.lower-message__image img
+        %li.message
+          .upper-message
+            %p.upper-message__user-name user2name
+            %p.upper-message__date 2018/02/14 09:25
+          .lower-message
+            %p.lower-message__content bbb
+            %img.lower-message__image img
+    .chat-form
+      %form
+        .form-group
+          %input{placeholder: "Type a messeage!", type: "text", name: "message"}
+          %label.form-img
+            %i.fa.fa-picture-o.icon
+        %input{type: "submit", value: "Send"}
+
+
+
