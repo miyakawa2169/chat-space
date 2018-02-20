@@ -5,7 +5,6 @@
         = current_user.name
       %ul.user-information__lists
         %li.user-information__lists__list
-          = link_to do
             = fa_icon 'pencil-square-o', class: 'icon'
         %li.user-information__lists__list
           = link_to edit_user_path(current_user.id) do
