@@ -29,6 +29,8 @@ gem 'haml-rails'
 # font-awesome導入
 gem "font-awesome-rails"
 
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
