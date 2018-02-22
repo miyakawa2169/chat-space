@@ -30,6 +30,9 @@ gem 'haml-rails'
 gem "font-awesome-rails"
 
 gem 'devise'
+# 画像投稿用
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
