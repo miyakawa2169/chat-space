@@ -12,28 +12,15 @@
             %li.group__menber-lists__list menber3
       .group-edit-button Edit
     .chat-messages
-      %ul
-        %li.message
-          .upper-message
-            %p.upper-message__user-name user1name
-            %p.upper-message__date 2018/02/14 09:25
-          .lower-message
-            %p.lower-message__content aaa
-            %img.lower-message__image img
-        %li.message
-          .upper-message
-            %p.upper-message__user-name user2name
-            %p.upper-message__date 2018/02/14 09:25
-          .lower-message
-            %p.lower-message__content bbb
-            %img.lower-message__image img
+      = render @messages
     .chat-form
-      %form
+      = form_for [@group, @message] do |f|
         .form-group
-          %input{placeholder: "Type a messeage!", type: "text", name: "message"}
-          %label.form-img
-            %i.fa.fa-picture-o.icon
-        %input{type: "submit", value: "Send"}
+          = f.text_field :content, class: 'form-group form-group__input', placeholder: 'type a message'
+          = f.label :image, class: 'form-img' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
 
 
 
