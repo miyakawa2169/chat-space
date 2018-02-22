@@ -1,3 +1,157 @@
+@mixin side_bar {
+  width: 300px;
+  height: 100%;
+  color: #FFFFFF;
+  float: left;
+  .user-information {
+    height: 100px;
+    background-color: #253141;
+    line-height: 100px;
+    padding: 0 20px;
+    &__name {
+      float: left;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__lists {
+      float: right;
+      .icon {
+        color: #FFFFFF;
+        margin-right: 5px;
+      }
+      &__list {
+        float: left;
+      }
+    }
+  }
+  .groups {
+    height: 100%;
+    background-color: #2f3e51;
+    padding: 0 20px;
+    .group-content {
+      &__name {
+        color: #FFFFFF;
+        padding-top: 20px;
+        padding-bottom: 5px;
+        font-size: 15px;
+      }
+      &__message {
+        color: #FFFFFF;
+        font-size: 11px;
+        padding-bottom: 40px;
+      }
+    }
+  }
+}
+@mixin chat {
+  float: left;
+  width: calc(100% - 300px);
+  color: #000;
+  height: 100%;
+  .chat-header{
+    height: 100px; // 一時的に設定
+    background-color: #FFFFFF;
+    padding: 0 40px;
+    .group {
+      float: left;
+      &__title {
+        padding-top: 35px;
+        font-size: 20px;
+        color: #333333;
+        padding-bottom: 15px;
+      }
+      &__menber-lists {
+        &__list {
+          float: left;
+          font-size: 12px;
+          margin-right: 5px;
+        }
+      }
+    }
+    .group-edit-button {
+      border: 1px solid #38AEF0;
+      color: #38AEF0;
+      float: right;
+      padding: 0 20px 0;
+      margin-top: 35px;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+  .chat-messages {
+    height: calc(100% - 100px - 90px);
+    background-color: #FAFAFA;
+    padding: 0 40px;
+    overflow: scroll;
+    .message {
+      .upper-message {
+        padding-top: 46px;
+        &__user-name {
+          float: left;
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+          padding-right: 10px;
+        }
+        &__date {
+          float: left;
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      .lower-message {
+        clear: both;
+        &__content {
+          padding-top: 10px;
+          padding-bottom: 40px;
+          font-size: 14px;
+          color: #434A54;
+        }
+        &__image {
+        }
+      }
+    }
+  }
+  .chat-form {
+    background-color: #DDDDDD;
+    height: 50px;
+    padding: 20px 40px;
+    .form-group {
+      float: left;
+      height: 50px;
+      background-color: #FFF;
+      width: calc(100% - 130px);
+      input {
+        float: left;
+        height: 50px;
+        width: calc(100% - 50px);
+        font-size: 16px;
+        color: #434A54;
+        background-color: #FFF;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      label.form-img {
+        float: right;
+        height: 50px;
+        background-color: #FFF;
+        line-height: 50px;
+        padding-right: 10px;
+      }
+    }
+    input {
+      float: right;
+      border: none;
+      background-color: #38AEF0;
+      color: #fff;
+      font-size: 16px;
+      padding: 0 30px;
+      margin-left: 15px;
+      height: 50px;
+    }
+  }
+}
+
 html, body {
   height: 100%;
 }
@@ -16,157 +170,10 @@ html, body {
     }
   }
   .sidebar {
-    width: 300px;
-    height: 100%;
-    color: #FFFFFF;
-    float: left;
-    .user-information {
-      height: 100px;
-      background-color: #253141;
-      line-height: 100px;
-      padding: 0 20px;
-      &__name {
-        float: left;
-        font-size: 16px;
-        font-weight: bold;
-      }
-      &__lists {
-        float: right;
-        .icon {
-          color: #FFFFFF;
-          margin-right: 5px;
-        }
-        &__list {
-          float: left;
-        }
-      }
-    }
-    .groups {
-      height: 100%;
-      background-color: #2f3e51;
-      padding: 0 20px;
-      .group-content {
-        &__name {
-          color: #FFFFFF;
-          padding-top: 20px;
-          padding-bottom: 5px;
-          font-size: 15px;
-        }
-        &__message {
-          color: #FFFFFF;
-          font-size: 11px;
-          padding-bottom: 40px;
-        }
-      }
-    }
+    @include side_bar
   }
   .chat {
-    float: left;
-    width: calc(100% - 300px);
-    color: #000;
-    height: 100%;
-    .chat-header{
-      height: 100px; // 一時的に設定
-      background-color: #FFFFFF;
-      padding: 0 40px;
-      .group {
-        float: left;
-        &__title {
-          padding-top: 35px;
-          font-size: 20px;
-          color: #333333;
-          padding-bottom: 15px;
-        }
-        &__menber-lists {
-          &__list {
-            float: left;
-            font-size: 12px;
-            margin-right: 5px;
-          }
-        }
-      }
-      .group-edit-button {
-        border: 1px solid #38AEF0;
-        color: #38AEF0;
-        float: right;
-        padding: 0 20px 0;
-        margin-top: 35px;
-        height: 40px;
-        line-height: 40px;
-      }
-    }
-    .chat-messages {
-      height: calc(100% - 100px - 90px);
-      background-color: #FAFAFA;
-      padding: 0 40px;
-      overflow: scroll;
-      .message {
-        .upper-message {
-          padding-top: 46px;
-          &__user-name {
-            float: left;
-            font-size: 16px;
-            font-weight: bold;
-            color: #434A54;
-            padding-right: 10px;
-          }
-          &__date {
-            float: left;
-            font-size: 12px;
-            color: #999999;
-          }
-        }
-        .lower-message {
-          clear: both;
-          &__content {
-            padding-top: 10px;
-            padding-bottom: 40px;
-            font-size: 14px;
-            color: #434A54;
-          }
-          &__image {
-          }
-        }
-      }
-    }
-    .chat-form {
-      background-color: #DDDDDD;
-      height: 50px;
-      padding: 20px 40px;
-      .form-group {
-        float: left;
-        height: 50px;
-        background-color: #FFF;
-        width: calc(100% - 130px);
-        input {
-          float: left;
-          height: 50px;
-          width: calc(100% - 50px);
-          font-size: 16px;
-          color: #434A54;
-          background-color: #FFF;
-          padding-left: 0;
-          padding-right: 0;
-        }
-        label.form-img {
-          float: right;
-          height: 50px;
-          background-color: #FFF;
-          line-height: 50px;
-          padding-right: 10px;
-        }
-      }
-      input {
-        float: right;
-        border: none;
-        background-color: #38AEF0;
-        color: #fff;
-        font-size: 16px;
-        padding: 0 30px;
-        margin-left: 15px;
-        height: 50px;
-      }
-    }
+    @include chat
   }
 }
 
