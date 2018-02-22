@@ -33,6 +33,7 @@ html, body {
       &__lists {
         float: right;
         .icon {
+          color: #FFFFFF;
           margin-right: 5px;
         }
         &__list {
@@ -46,11 +47,13 @@ html, body {
       padding: 0 20px;
       .group-content {
         &__name {
+          color: #FFFFFF;
           padding-top: 20px;
           padding-bottom: 5px;
           font-size: 15px;
         }
         &__message {
+          color: #FFFFFF;
           font-size: 11px;
           padding-bottom: 40px;
         }
