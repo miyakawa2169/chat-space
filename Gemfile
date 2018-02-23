@@ -42,6 +42,10 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
 end
 
 group :development do
