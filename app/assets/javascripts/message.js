@@ -1,7 +1,8 @@
 $(function(){
   function buildHTML(message){
     console.log('run buildHTML');
-    var main_html_1 = `<div class='upper-message'>
+    var main_html_1 = `<div class='message'>
+                        <div class='upper-message'>
                         <div class='upper-message__user-name'>
                           <p>${message.user_name}</p>
                         </div>
@@ -10,6 +11,7 @@ $(function(){
                         </div>
                         <div class='lower-meesage'>`;
     var main_html_2 =    `</div>
+                          </div>
                          </div>`;
 
     // lower-meesageの箇所に挿入する部分作成
@@ -34,7 +36,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action') + '.json';
-    console.log(url);
+    console.log('ajax start!');
     $.ajax({
       url: url,
       type: "POST",
@@ -46,7 +48,7 @@ $(function(){
     .done(function(data){
       console.log('ajax success!');
       var html = buildHTML(data);
-      $('.message').append(html);
+      $('.chat-messages').append(html);
       $('.form-group.form-group__input').val('');
     })
     .fail(function(){
