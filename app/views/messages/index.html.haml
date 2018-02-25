@@ -14,7 +14,7 @@
     .chat-messages
       = render @messages
     .chat-form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], html: {id: 'chat-form'} do |f|
         .form-group
           = f.text_field :content, class: 'form-group form-group__input', placeholder: 'type a message'
           = f.label :image, class: 'form-img' do
