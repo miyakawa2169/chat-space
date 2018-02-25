@@ -50,6 +50,7 @@ $(function(){
       var html = buildHTML(data);
       $('.chat-messages').append(html);
       $('.form-group.form-group__input').val('');
+      $('.chat-messages').animate({scrollTop: $('.chat-messages')[0].scrollHeight}, 500, 'swing');
     })
     .fail(function(){
       alert('error');
