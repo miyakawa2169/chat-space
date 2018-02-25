@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log('run buildHTML');
     var html =        `<div class='message'>
                         <div class='upper-message'>
                         <div class='upper-message__user-name'>
@@ -24,7 +23,6 @@ $(function(){
     event.stopPropagation();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    console.log('ajax start!');
     $.ajax({
       url: url,
       type: "POST",
@@ -34,7 +32,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log('ajax success!');
       var html = buildHTML(data);
       $('.chat-messages').append(html);
       $('.form-group.form-group__input').val('');
