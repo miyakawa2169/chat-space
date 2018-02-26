@@ -20,7 +20,8 @@ $(function(){
       $('#user-search-result').empty();
       var html = "";
       // ユーザ検索でひっかかった数分、HTML作成
-      $.each(data, function(i, val) {
+      data_array = data['search_users'];
+      $.each(data_array, function(i, val) {
         html = html + buildHTML(val);
       });
       $('#user-search-result').append(html);

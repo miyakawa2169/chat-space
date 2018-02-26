@@ -1,4 +1,4 @@
-json.array! @search_users do |search_user|
-  json.id     search_user.id
-  json.name   search_user.name
+json.search_users @search_users do |attachment|
+  json.id     attachment.id
+  json.name   attachment.name
 end
