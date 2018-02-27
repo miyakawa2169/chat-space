@@ -18,6 +18,22 @@ $(function(){
                          </div>`;
     return html;
   }
+  setInterval(function(){
+    // console.log("interval test");
+    var url = location.href;
+    $.ajax({
+      url: url,
+      type: "GET",
+      dataType: 'json'
+    })
+    .done(function(data){
+      console.log(data);
+    })
+    .fail(function(){
+      alert('error');
+    })
+
+  },60000);
   $('#chat-form').on('submit', function(e){
     e.preventDefault();
     event.stopPropagation();
