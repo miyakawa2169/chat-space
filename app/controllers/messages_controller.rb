@@ -3,7 +3,11 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = @group.messages.includes(:user)
+    if params[:last_message_id].present?
+      @messages = @group.messages.where("id > ?", params[:last_message_id]).includes(:user)
+    else
+      @messages = @group.messages.includes(:user)
+    end
     respond_to do |format|
       format.html { render :index }
       format.json

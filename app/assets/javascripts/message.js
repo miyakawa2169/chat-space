@@ -20,13 +20,20 @@ $(function(){
   }
   setInterval(function(){
     var url = location.href;
+    var last_message_id = $('.chat-messages').children('.message').last().attr('data-message-id');
     $.ajax({
       url: url,
       type: "GET",
+      data: {last_message_id: last_message_id},
       dataType: 'json'
     })
     .done(function(data){
-      console.log(data);
+      var html = "";
+      $.each(data, function(i, val) {
+        html = html + buildHTML(val);
+      });
+      $('.chat-messages').append(html);
+      $('.chat-messages').animate({scrollTop: $('.chat-messages')[0].scrollHeight}, 500, 'swing');
     })
     .fail(function(){
       alert('error');
