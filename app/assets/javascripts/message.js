@@ -38,7 +38,7 @@ $(function(){
       $.ajax({
         url: url,
         type: "GET",
-        data: {last_message_id: last_message_id},
+        data: {id: last_message_id},
         dataType: 'json'
       })
       .done(function(data){
