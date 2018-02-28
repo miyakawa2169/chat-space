@@ -30,10 +30,8 @@ $(function(){
     // メッセージ投稿画面以外のURLの場合
     if (!url.match(/\/groups\/[\d]{1,}\/messages/)) {
       clearInterval(timer);
-      console.log("clearInterval");
     // それ以外の場合
     } else {
-      console.log("setInterval");
       var last_message_id = $('.chat-messages').children('.message').last().data('message-id');
       $.ajax({
         url: url,
