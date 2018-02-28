@@ -20,7 +20,7 @@ $(function(){
   }
   setInterval(function(){
     var url = location.href;
-    var last_message_id = $('.chat-messages').children('.message').last().attr('data-message-id');
+    var last_message_id = $('.chat-messages').children('.message').last().data('message-id');
     $.ajax({
       url: url,
       type: "GET",
@@ -30,7 +30,7 @@ $(function(){
     .done(function(data){
       var html = "";
       $.each(data, function(i, val) {
-        html = html + buildHTML(val);
+        html += buildHTML(val);
       });
       $('.chat-messages').append(html);
       $('.chat-messages').animate({scrollTop: $('.chat-messages')[0].scrollHeight}, 500, 'swing');
