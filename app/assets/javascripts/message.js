@@ -1,4 +1,7 @@
 $(function(){
+  // 【関数定義部分】
+
+  // メッセージ投稿（非同期）／自動更新時のHTML要素追加
   function buildHTML(message){
     var html =        `<div class='message' data-message-id='${message.id}'>
                         <div class='upper-message'>
@@ -18,28 +21,41 @@ $(function(){
                          </div>`;
     return html;
   }
-  setInterval(function(){
-    var url = location.href;
-    var last_message_id = $('.chat-messages').children('.message').last().data('message-id');
-    $.ajax({
-      url: url,
-      type: "GET",
-      data: {last_message_id: last_message_id},
-      dataType: 'json'
-    })
-    .done(function(data){
-      var html = "";
-      $.each(data, function(i, val) {
-        html += buildHTML(val);
-      });
-      $('.chat-messages').append(html);
-      $('.chat-messages').animate({scrollTop: $('.chat-messages')[0].scrollHeight}, 500, 'swing');
-    })
-    .fail(function(){
-      alert('error');
-    })
-  },5000);
 
+  // 【実処理部分】
+
+  // メッセージ自動更新起動
+  var timer = setInterval(function(){
+    var url = location.href;
+    // メッセージ投稿画面以外のURLの場合
+    if (!url.match(/\/groups\/[\d]{1,}\/messages/)) {
+      clearInterval(timer);
+      console.log("clearInterval");
+    // それ以外の場合
+    } else {
+      console.log("setInterval");
+      var last_message_id = $('.chat-messages').children('.message').last().data('message-id');
+      $.ajax({
+        url: url,
+        type: "GET",
+        data: {last_message_id: last_message_id},
+        dataType: 'json'
+      })
+      .done(function(data){
+        var html = "";
+        $.each(data, function(i, val) {
+          html += buildHTML(val);
+        });
+        $('.chat-messages').append(html);
+        $('.chat-messages').animate({scrollTop: $('.chat-messages')[0].scrollHeight}, 500, 'swing');
+      })
+      .fail(function(){
+        alert('error');
+      })
+    }
+  }, 5000);
+
+  // メッセージ投稿（非同期）
   $('#chat-form').on('submit', function(e){
     e.preventDefault();
     event.stopPropagation();
