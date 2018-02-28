@@ -38,7 +38,7 @@ $(function(){
     .fail(function(){
       alert('error');
     })
-  },60000);
+  },5000);
 
   $('#chat-form').on('submit', function(e){
     e.preventDefault();
